@@ -14,16 +14,18 @@ public class CreateSquareImpl implements CreateSquare {
     public Rectangle moveSquare(Rectangle rectangle, Text text, ImageView imageView){
 
         int moveSize = 20;
+        int resetX = 500;
+        int resetY = 500;
 
         int l = random.nextInt(4);
 
-        if (rectangle.getX() >= 600 || rectangle.getY() >= 600 || rectangle.getX() <= 0 || rectangle.getY() <= 0){
-            rectangle.setX(300);
-            rectangle.setY(300);
-            text.setX(300);
-            text.setY(300);
-            imageView.setX(300);
-            imageView.setY(300);
+        if (rectangle.getX() >= 1000 || rectangle.getY() >= 1000 || rectangle.getX() <= 0 || rectangle.getY() <= 0){
+            rectangle.setX(resetX);
+            rectangle.setY(resetY);
+            text.setX(resetX);
+            text.setY(resetY);
+            imageView.setX(resetX);
+            imageView.setY(resetY);
         }else {
             if (l == 0) {
                 text.setX(rectangle.getX() + moveSize);

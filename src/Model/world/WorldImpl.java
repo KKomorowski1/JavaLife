@@ -1,7 +1,6 @@
 package Model.world;
 
 import Model.Organism;
-import Model.mammal.Doe;
 import Model.mammal.Wolf;
 import javafx.application.Platform;
 import javafx.scene.Group;
@@ -21,10 +20,6 @@ public class WorldImpl implements World{
     public WorldImpl() {
     }
 
-    public WorldImpl(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
 
     public Scene getScene() {
         return scene;
@@ -38,15 +33,15 @@ public class WorldImpl implements World{
         return width;
     }
 
-    public void setWidth(int width) {
+    private void setWidth(int width) {
         this.width = width;
     }
 
-    public int getHeight() {
+    private int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    private void setHeight(int height) {
         this.height = height;
     }
 
@@ -58,11 +53,11 @@ public class WorldImpl implements World{
         this.organisms = organisms;
     }
 
-    public Group getGroup() {
+    private Group getGroup() {
         return group;
     }
 
-    public void setGroup() {
+    private void setGroup() {
         this.group = new Group();
     }
 
@@ -76,9 +71,11 @@ public class WorldImpl implements World{
 
     @Override
     public ArrayList<Organism> addOrganisms(){
-        getOrganisms().add(new Doe("Grass", 300, 300));
-        getOrganisms().add(new Doe("Grass", 260, 260));
         getOrganisms().add(new Wolf("Grass", 240, 240));
+        getOrganisms().add(new Wolf("Grass", 260, 260));
+        //getOrganisms().add(new Doe("Grass", 280, 280));
+        //getOrganisms().add(new Doe("Grass", 280, 280));
+
 
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 
@@ -101,8 +98,10 @@ public class WorldImpl implements World{
     public void addOrganism(Organism organism) {
 
         Platform.runLater(() -> {
-            getOrganisms().add(organism);
-            getGroup().getChildren().addAll(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+            if (organism != null) {
+                getOrganisms().add(organism);
+                getGroup().getChildren().addAll(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+            }
         });
     }
 }

@@ -26,14 +26,14 @@ public class Organism {
         this.imageView = imageView;
     }
 
-    public Organism() {
+    protected Organism() {
     }
 
     public ImageView getImageView() {
         return imageView;
     }
 
-    public void setImageView(ImageView imageView) {
+    protected void setImageView(ImageView imageView) {
         this.imageView = imageView;
     }
 
@@ -41,24 +41,24 @@ public class Organism {
         return power;
     }
 
-    public void setPower(int power) {
+    protected void setPower(int power) {
         this.power = power;
     }
 
 
-    public int getSpawnX() {
+    protected int getSpawnX() {
         return spawnX;
     }
 
-    public void setSpawnX(int spawnX) {
+    private void setSpawnX(int spawnX) {
         this.spawnX = spawnX;
     }
 
-    public int getSpawnY() {
+    protected int getSpawnY() {
         return spawnY;
     }
 
-    public void setSpawnY(int spawnY) {
+    private void setSpawnY(int spawnY) {
         this.spawnY = spawnY;
     }
 
@@ -66,16 +66,16 @@ public class Organism {
         return rectangle;
     }
 
-    public void setRectangle(Rectangle rectangle) {
+    protected void setRectangle(Rectangle rectangle) {
         this.rectangle = rectangle;
         rectangle.setOpacity(0.5);
     }
 
-    public Color getColor() {
+    protected Color getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    protected void setColor(Color color) {
         this.color = color;
     }
 
@@ -83,7 +83,7 @@ public class Organism {
         return type;
     }
 
-    public void setType(String type) {
+    protected void setType(String type) {
         this.type = type;
     }
 
@@ -91,7 +91,7 @@ public class Organism {
         return health;
     }
 
-    public void setHealth(Text health) {
+    protected void setHealth(Text health) {
         this.health = health;
         health.setX(getSpawnX());
         health.setY(getSpawnY());

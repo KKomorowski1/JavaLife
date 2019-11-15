@@ -12,25 +12,32 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.lang.reflect.InvocationTargetException;
+
 
 public class Main extends Application {
     private CreateSquareImpl createSquare = new CreateSquareImpl();
     private CollisionImpl collision = new CollisionImpl();
     private WorldImpl worldImpl = new WorldImpl();
-    private Scene scene = worldImpl.world(600, 600);
+    private Scene scene = worldImpl.world(1000, 1000);
 
     @Override
     public void start(Stage primaryStage){
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-            for (Organism organism : worldImpl.getOrganisms()) {
-                createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
+            System.out.println(worldImpl.getOrganisms());
 
-                if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
-                    if (organism.getHealth().getText().equals("0")) {
-                        worldImpl.addOrganism(new Wolf("Type", 40, 40));
-                        worldImpl.removeOrganism(organism);
+            for (Organism organism : worldImpl.getOrganisms()) {
+                try {
+                createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
+                        worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
+                        if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
+                            worldImpl.removeOrganism(organism);
+                        }
                     }
+                } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
+                    System.out.println("null");
                 }
             }
         }));
