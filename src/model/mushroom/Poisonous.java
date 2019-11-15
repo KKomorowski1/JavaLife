@@ -16,7 +16,7 @@ public class Poisonous extends Organism {
         setColor(Color.PURPLE);
         getRectangle().setFill(getColor());
         setHealth(new Text("1"));
-        setType("Trujak");
+        setType("Muchomor");
         setPower(150);
         setMoving(false);
     }

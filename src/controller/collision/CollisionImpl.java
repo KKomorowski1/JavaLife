@@ -37,14 +37,14 @@ public class CollisionImpl implements Collision {
     @Override
     public Organism multiple(Organism organism, List<Organism> list) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Random random = new Random();
-        if (random.nextInt(10) >= 6){
+        if (random.nextInt(10) >= 6 || organism.getClass().getName().equals("model.mushroom.Poisonous")){
         for (Organism static_block : list) {
             if (static_block.getRectangle() != organism.getRectangle()) {
                 if (organism.getRectangle().getBoundsInParent().intersects(static_block.getRectangle().getBoundsInParent())) {
                     if (organism.getClass().equals(static_block.getClass())) {
                         Class<?> clazz = Class.forName(organism.getClass().getName());
-                        Constructor<?> ctor = clazz.getConstructor(String.class, int.class, int.class);
-                        Object object = ctor.newInstance("", random.nextInt(1000), random.nextInt(1000));
+                        Constructor<?> ctor = clazz.getConstructor(int.class, int.class);
+                        Object object = ctor.newInstance(random.nextInt(1000), random.nextInt(1000));
                         return (Organism) object;
                     }
                 }

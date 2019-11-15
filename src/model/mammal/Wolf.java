@@ -10,20 +10,11 @@ import static javafx.scene.paint.Color.*;
 
 public class Wolf extends Organism {
 
-    private String typeOfFoodEaten;
 
     public Wolf() {
     }
 
-    public String getTypeOfFoodEaten() {
-        return typeOfFoodEaten;
-    }
-
-    public void setTypeOfFoodEaten(String typeOfFoodEaten) {
-        this.typeOfFoodEaten = typeOfFoodEaten;
-    }
-
-    public Wolf(String typeOfFoodEaten, int x, int y ){
+    public Wolf(int x, int y ){
         setImageView(new ImageView(new Image(("Resources/iconfinder_overwolf_logo_4177735.png"), 20, 20, false, true)));
         placement(x, y);
         setRectangle(new CreateSquareImpl().createSquare(getSpawnX(), getSpawnY()));
@@ -33,13 +24,10 @@ public class Wolf extends Organism {
         setType("Drapieznik");
         setPower(20);
         setMoving(true);
-        this.typeOfFoodEaten = typeOfFoodEaten;
     }
 
     @Override
     public String toString() {
-        return "Wolf{" +
-                "typeOfFoodEaten='" + typeOfFoodEaten + '\'' +
-                '}';
+        return "Wolf{}";
     }
 }

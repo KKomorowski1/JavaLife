@@ -24,21 +24,21 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         worldImpl.addOrganisms();
         Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
-            System.out.println(worldImpl.getOrganisms());
-
+            System.out.println(worldImpl.getOrganisms().size());
             for (Organism organism : worldImpl.getOrganisms()) {
                 try {
                     if (organism.isMoving()) {
                         createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
-                    }
-                if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
-                        worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
-                        if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
-                            worldImpl.removeOrganism(organism);
+
+                        if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
+                            worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
+                            if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
+                                worldImpl.removeOrganism(organism);
+                            }
                         }
                     }
                 } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
-                    System.out.println("null");
+                    e.getStackTrace();
                 }
             }
         }));
