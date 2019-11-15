@@ -1,7 +1,7 @@
-package Model.world;
+package model.world;
 
-import Model.Organism;
-import Model.mammal.Wolf;
+import model.Organism;
+import model.mammal.Wolf;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;

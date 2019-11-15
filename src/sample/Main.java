@@ -1,8 +1,7 @@
 package sample;
 
-import Model.Organism;
-import Model.mammal.Wolf;
-import Model.world.WorldImpl;
+import model.Organism;
+import model.world.WorldImpl;
 import controller.collision.CollisionImpl;
 import controller.organisms.CreateSquareImpl;
 import javafx.animation.KeyFrame;

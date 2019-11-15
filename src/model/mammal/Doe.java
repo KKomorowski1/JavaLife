@@ -1,6 +1,6 @@
-package Model.mammal;
+package model.mammal;
 
-import Model.Organism;
+import model.Organism;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;

@@ -1,6 +1,6 @@
-package Model.world;
+package model.world;
 
-import Model.Organism;
+import model.Organism;
 import javafx.scene.Scene;
 
 import java.util.ArrayList;
