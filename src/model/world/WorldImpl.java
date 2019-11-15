@@ -1,10 +1,12 @@
 package model.world;
 
 import model.Organism;
+import model.mammal.Doe;
 import model.mammal.Wolf;
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import model.mushroom.Poisonous;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -73,9 +75,9 @@ public class WorldImpl implements World{
     public ArrayList<Organism> addOrganisms(){
         getOrganisms().add(new Wolf("Grass", 240, 240));
         getOrganisms().add(new Wolf("Grass", 260, 260));
-        //getOrganisms().add(new Doe("Grass", 280, 280));
-        //getOrganisms().add(new Doe("Grass", 280, 280));
-
+        getOrganisms().add(new Doe("Grass", 280, 280));
+        getOrganisms().add(new Doe("Grass", 280, 280));
+        getOrganisms().add(new Poisonous(200, 200));
 
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 

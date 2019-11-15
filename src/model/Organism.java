@@ -14,6 +14,7 @@ public class Organism {
     private int spawnX;
     private int spawnY;
     private ImageView imageView;
+    private boolean isMoving;
 
     public Organism(String type, Text health, Color color, Rectangle rectangle, int power, int spawnX, int spawnY, ImageView imageView) {
         this.type = type;
@@ -27,6 +28,14 @@ public class Organism {
     }
 
     protected Organism() {
+    }
+
+    public boolean isMoving() {
+        return isMoving;
+    }
+
+    protected void setMoving(boolean moving) {
+        isMoving = moving;
     }
 
     public ImageView getImageView() {

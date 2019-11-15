@@ -33,6 +33,7 @@ public class Doe extends Organism {
         setHealth(new Text("60"));
         setType("Nie Drapieznik");
         setPower(10);
+        setMoving(true);
         this.typeOfFoodEaten = typeOfFoodEaten;
     }
 

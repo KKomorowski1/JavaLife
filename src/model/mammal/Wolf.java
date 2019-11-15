@@ -32,6 +32,7 @@ public class Wolf extends Organism {
         setHealth(new Text("100"));
         setType("Drapieznik");
         setPower(20);
+        setMoving(true);
         this.typeOfFoodEaten = typeOfFoodEaten;
     }
 

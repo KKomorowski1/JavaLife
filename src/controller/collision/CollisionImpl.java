@@ -28,6 +28,9 @@ public class CollisionImpl implements Collision {
             if (organism1.getPower() > organism.getPower()){
                 organism.getHealth().setText(String.valueOf(Integer.parseInt(organism.getHealth().getText()) - 20));
             }
+            if (organism1.getClass().getName().equals("model.mushroom.Poisonous")){
+                organism.getHealth().setText("10");
+            }
         }
     }
 

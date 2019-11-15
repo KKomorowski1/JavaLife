@@ -18,6 +18,7 @@ public class Poisonous extends Organism {
         setHealth(new Text("1"));
         setType("Trujak");
         setPower(150);
+        setMoving(false);
     }
 
     @Override
