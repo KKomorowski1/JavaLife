@@ -75,18 +75,18 @@ public class WorldImpl implements World{
     @Override
     public ArrayList<Organism> addOrganisms(){
         Random random = new Random();
-        getOrganisms().add(new Wolf(240, 240));
-        getOrganisms().add(new Wolf(260, 260));
-        getOrganisms().add(new Wolf(260, 260));
-        getOrganisms().add(new Wolf(260, 260));
-        getOrganisms().add(new Doe(280, 280));
-        getOrganisms().add(new Doe(80, 280));
-        getOrganisms().add(new Doe(280, 280));
-        getOrganisms().add(new Doe(280, 280));
-        getOrganisms().add(new Poisonous(200, 200));
-        getOrganisms().add(new Poisonous(180, 80));
-        getOrganisms().add(new Poisonous(20, 180));
-        getOrganisms().add(new Poisonous(40, 20));
+        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe(random.nextInt(1000), 280));
+        getOrganisms().add(new Doe(random.nextInt(1000), 280));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
 
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 
