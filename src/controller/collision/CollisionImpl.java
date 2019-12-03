@@ -1,8 +1,7 @@
 package controller.collision;
 
+import factory.OrganismFactory;
 import model.Organism;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Random;
 
@@ -28,24 +27,22 @@ public class CollisionImpl implements Collision {
             if (organism1.getPower() > organism.getPower()){
                 organism.getHealth().setText(String.valueOf(Integer.parseInt(organism.getHealth().getText()) - 20));
             }
-            if (organism1.getClass().getName().equals("model.mushroom.Poisonous")){
+            if (organism1.getType().equalsIgnoreCase("Poisonous")){
                 organism.getHealth().setText("10");
             }
         }
     }
 
     @Override
-    public Organism multiple(Organism organism, List<Organism> list) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public Organism multiple(Organism organism, List<Organism> list){
         Random random = new Random();
-        if (random.nextInt(10) >= 6 || organism.getClass().getName().equals("model.mushroom.Poisonous")){
+        if (random.nextInt(10) >= 6){
         for (Organism static_block : list) {
             if (static_block.getRectangle() != organism.getRectangle()) {
                 if (organism.getRectangle().getBoundsInParent().intersects(static_block.getRectangle().getBoundsInParent())) {
                     if (organism.getClass().equals(static_block.getClass())) {
-                        Class<?> clazz = Class.forName(organism.getClass().getName());
-                        Constructor<?> ctor = clazz.getConstructor(int.class, int.class);
-                        Object object = ctor.newInstance(random.nextInt(1000), random.nextInt(1000));
-                        return (Organism) object;
+
+                        return OrganismFactory.getOrganism(organism.getType(), 300, 300);
                     }
                 }
                 }

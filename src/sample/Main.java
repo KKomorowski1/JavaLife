@@ -26,7 +26,6 @@ public class Main extends Application {
         Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
             System.out.println(worldImpl.getOrganisms().size());
             for (Organism organism : worldImpl.getOrganisms()) {
-                try {
                     if (organism.isMoving()) {
                         createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
 
@@ -37,9 +36,6 @@ public class Main extends Application {
                             }
                         }
                     }
-                } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
-                    e.getStackTrace();
-                }
             }
         }));
 

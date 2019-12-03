@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface Collision {
     boolean checkShapeCollision(Organism organism, List<Organism> list);
-    Organism multiple(Organism organism,  List<Organism> list) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
+    Organism multiple(Organism organism,  List<Organism> list);
 }

@@ -1,5 +1,7 @@
 package model.mammal;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import model.Organism;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,24 +12,75 @@ import static javafx.scene.paint.Color.BLUE;
 
 public class Doe extends Organism {
 
-    public Doe() {
-    }
+    private String type;
+    private Text health;
+    private Color color;
+    private Rectangle rectangle;
+    private int power;
+    private int spawnX;
+    private int spawnY;
+    private ImageView imageView;
+    private boolean isMoving;
 
-    public Doe(int x, int y) {
-
-        setImageView(new ImageView(new Image(("Resources/iconfinder_Rudolf_Deer_1651900.png"), 20, 20, false, true)));
-        placement(x, y);
-        setRectangle(new CreateSquareImpl().createSquare(getSpawnX(), getSpawnY()));
-        setColor(BLUE);
-        getRectangle().setFill(getColor());
-        setHealth(new Text("60"));
-        setType("Nie Drapieznik");
-        setPower(10);
-        setMoving(true);
+    public Doe(int spawnX, int spawnY) {
+        this.type = "Doe";
+        this.health = new Text("60");
+        this.color = BLUE;
+        this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
+        this.power = 10;
+        this.spawnX = spawnX;
+        this.spawnY = spawnY;
+        this.imageView = new ImageView(new Image(("Resources/iconfinder_Rudolf_Deer_1651900.png"), 20, 20, false, true));
+        this.isMoving = true;
     }
 
     @Override
     public String toString() {
         return "Doe{}";
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    @Override
+    public Text getHealth() {
+        return this.health;
+    }
+
+    @Override
+    public Color getColor() {
+        return this.color;
+    }
+
+    @Override
+    public Rectangle getRectangle() {
+        return this.rectangle;
+    }
+
+    @Override
+    public int getPower() {
+        return this.power;
+    }
+
+    @Override
+    public int getSpawnX() {
+        return this.spawnX;
+    }
+
+    @Override
+    public int getSpawnY() {
+        return this.spawnY;
+    }
+
+    @Override
+    public boolean isMoving() {
+        return this.isMoving;
+    }
+
+    @Override
+    public ImageView getImageView() {
+        return this.imageView;
     }
 }
