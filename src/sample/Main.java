@@ -1,7 +1,7 @@
 package sample;
 
 import model.Organism;
-import model.world.WorldImpl;
+import controller.world.WorldImpl;
 import controller.collision.CollisionImpl;
 import controller.organisms.CreateSquareImpl;
 import javafx.animation.KeyFrame;
@@ -10,8 +10,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.lang.reflect.InvocationTargetException;
 
 
 public class Main extends Application {

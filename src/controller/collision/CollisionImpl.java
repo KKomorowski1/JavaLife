@@ -7,7 +7,6 @@ import java.util.Random;
 
 public class CollisionImpl implements Collision {
 
-
     @Override
     public boolean checkShapeCollision(Organism organism, List<Organism> list) {
         boolean collision = false;
@@ -42,7 +41,7 @@ public class CollisionImpl implements Collision {
                 if (organism.getRectangle().getBoundsInParent().intersects(static_block.getRectangle().getBoundsInParent())) {
                     if (organism.getClass().equals(static_block.getClass())) {
 
-                        return OrganismFactory.getOrganism(organism.getType(), 300, 300);
+                        return OrganismFactory.getOrganism(organism.getType(), random.nextInt(1000), random.nextInt(1000));
                     }
                 }
                 }

@@ -1,10 +1,9 @@
-package model.world;
+package controller.world;
 
 import model.Organism;
 import model.mammal.Doe;
 import model.mammal.Wolf;
 import javafx.application.Platform;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import model.mushroom.Poisonous;
 
@@ -12,57 +11,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
 
-public class WorldImpl implements World{
+public class WorldImpl extends model.world.World implements World {
 
-    private ArrayList<Organism> organisms = new ArrayList<>();
-    private Scene scene;
-    private Group group = new Group();
-    private int width;
-    private int height;
-
-    public WorldImpl() {
-    }
-
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    private void setWidth(int width) {
-        this.width = width;
-    }
-
-    private int getHeight() {
-        return height;
-    }
-
-    private void setHeight(int height) {
-        this.height = height;
-    }
-
-    public ArrayList<Organism> getOrganisms() {
-        return organisms;
-    }
-
-    public void setOrganisms(ArrayList<Organism> organisms) {
-        this.organisms = organisms;
-    }
-
-    private Group getGroup() {
-        return group;
-    }
-
-    private void setGroup() {
-        this.group = new Group();
-    }
 
     @Override
     public Scene world(int height, int width){
