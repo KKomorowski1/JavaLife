@@ -23,12 +23,15 @@ public class Wolf extends Organism {
     public Wolf(int spawnX, int spawnY) {
         this.type = "Wolf";
         this.health = new Text("200");
-        this.color = Color.BLUE;
+        this.color = Color.RED;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
+        this.rectangle.setFill(this.color);
         this.power = 20;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
         this.imageView = new ImageView(new Image(("Resources/iconfinder_overwolf_logo_4177735.png"), 20, 20, false, true));
+        this.imageView.setX(spawnX);
+        this.imageView.setY(spawnY);
         this.isMoving = true;
     }
 

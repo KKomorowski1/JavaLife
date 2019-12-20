@@ -25,10 +25,13 @@ public class Poisonous extends Organism {
         this.health = new Text("1");
         this.color = Color.PURPLE;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
+        this.rectangle.setFill(this.color);
         this.power = 150;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
         this.imageView = new ImageView(new Image(("Resources/iconfinder_Vegetables-10_3765553.png"), 20, 20, false, true));
+        this.imageView.setX(spawnX);
+        this.imageView.setY(spawnY);
         this.isMoving = false;
     }
 

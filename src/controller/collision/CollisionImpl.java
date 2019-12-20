@@ -5,7 +5,7 @@ import model.Organism;
 import java.util.List;
 import java.util.Random;
 
-public class CollisionImpl implements Collision {
+public class CollisionImpl implements Collision{
 
     @Override
     public boolean checkShapeCollision(Organism organism, List<Organism> list) {
@@ -32,7 +32,6 @@ public class CollisionImpl implements Collision {
         }
     }
 
-    @Override
     public Organism multiple(Organism organism, List<Organism> list){
         Random random = new Random();
         if (random.nextInt(10) >= 6){

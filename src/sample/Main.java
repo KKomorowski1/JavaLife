@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
 public class Main extends Application {
     private CreateSquareImpl createSquare = new CreateSquareImpl();
     private CollisionImpl collision = new CollisionImpl();
@@ -21,11 +20,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
             System.out.println(worldImpl.getOrganisms().size());
             for (Organism organism : worldImpl.getOrganisms()) {
-                    if (organism.isMoving()) {
-                        createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+                if (organism.isMoving()) {
+                    createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
 
                         if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
                             worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
@@ -33,7 +32,7 @@ public class Main extends Application {
                                 worldImpl.removeOrganism(organism);
                             }
                         }
-                    }
+                }
             }
         }));
 
@@ -48,7 +47,6 @@ public class Main extends Application {
         primaryStage.show();
 
     }
-
 
     public static void main(String[] args) {
         launch(args);

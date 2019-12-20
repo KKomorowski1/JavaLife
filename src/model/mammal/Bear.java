@@ -1,16 +1,19 @@
 package model.mammal;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import model.Organism;
+import controller.collision.Collision;
+import controller.organisms.CreateSquareImpl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import controller.organisms.CreateSquareImpl;
+import model.Organism;
 
-import static javafx.scene.paint.Color.BLUE;
+import java.util.List;
 
-public class Doe extends Organism {
+import static javafx.scene.paint.Color.BROWN;
+
+public class Bear extends Organism{
 
     private String type;
     private Text health;
@@ -22,16 +25,19 @@ public class Doe extends Organism {
     private ImageView imageView;
     private boolean isMoving;
 
-    public Doe(int spawnX, int spawnY) {
-        this.type = "Doe";
-        this.health = new Text("60");
-        this.color = BLUE;
+    public Bear() {
+    }
+
+    public Bear(int spawnX, int spawnY) {
+        this.type = "Bear";
+        this.health = new Text("160");
+        this.color = BROWN;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
         this.rectangle.setFill(this.color);
-        this.power = 10;
+        this.power = 30;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
-        this.imageView = new ImageView(new Image(("Resources/iconfinder_Rudolf_Deer_1651900.png"), 20, 20, false, true));
+        this.imageView = new ImageView(new Image(("Resources/bear.png"), 20, 20, false, true));
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
         this.isMoving = true;
@@ -39,7 +45,7 @@ public class Doe extends Organism {
 
     @Override
     public String toString() {
-        return "Doe{}";
+        return "Bear{}";
     }
 
     @Override
@@ -86,4 +92,5 @@ public class Doe extends Organism {
     public ImageView getImageView() {
         return this.imageView;
     }
+
 }

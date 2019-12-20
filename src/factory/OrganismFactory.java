@@ -1,6 +1,7 @@
 package factory;
 
 import model.Organism;
+import model.mammal.Bear;
 import model.mammal.Doe;
 import model.mammal.Wolf;
 
@@ -10,8 +11,8 @@ public class OrganismFactory {
 
         if("Wolf".equalsIgnoreCase(type)) return new Wolf(spawnX, spawnY);
         else if ("Doe".equalsIgnoreCase(type)) return new Doe(spawnX, spawnY);
+        else if ("Bear".equalsIgnoreCase(type)) return new Bear(spawnX, spawnY);
 
         return null;
     }
-
 }

@@ -6,7 +6,6 @@ import model.Organism;
 
 import java.util.ArrayList;
 
-
 public class World{
 
     private ArrayList<Organism> organisms = new ArrayList<>();
@@ -17,7 +16,6 @@ public class World{
 
     public World() {
     }
-
 
     public Scene getScene() {
         return scene;

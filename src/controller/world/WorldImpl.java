@@ -1,6 +1,7 @@
 package controller.world;
 
 import model.Organism;
+import model.mammal.Bear;
 import model.mammal.Doe;
 import model.mammal.Wolf;
 import javafx.application.Platform;
@@ -12,7 +13,6 @@ import java.util.Comparator;
 import java.util.Random;
 
 public class WorldImpl extends model.world.World implements World {
-
 
     @Override
     public Scene world(int height, int width){
@@ -28,10 +28,13 @@ public class WorldImpl extends model.world.World implements World {
 
         getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Poisonous(500, 500));
-        getOrganisms().add(new Poisonous(500, 500));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
+
 
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 
