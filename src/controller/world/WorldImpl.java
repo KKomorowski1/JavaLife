@@ -35,7 +35,6 @@ public class WorldImpl extends model.world.World implements World {
         getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
 
-
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 
         for(Organism organism : getOrganisms()){

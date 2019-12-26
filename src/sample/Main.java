@@ -26,12 +26,10 @@ public class Main extends Application {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
 
-                        if (collision.checkShapeCollision(organism, worldImpl.getOrganisms())) {
-                            worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
-                            if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
-                                worldImpl.removeOrganism(organism);
-                            }
-                        }
+                    worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
+                    if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
+                        worldImpl.removeOrganism(organism);
+                    }
                 }
             }
         }));
