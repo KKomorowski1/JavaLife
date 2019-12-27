@@ -87,7 +87,7 @@ public class Bear extends Organism{
 
     @Override
     public int getAge() {
-        return this.age;
+        return this.age++;
     }
 
     @Override

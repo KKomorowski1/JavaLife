@@ -20,7 +20,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             for (Organism organism : worldImpl.getOrganisms()) {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism);
@@ -29,7 +29,7 @@ public class Main extends Application {
                         worldImpl.addOrganism(collision.multiple(organism));
                     }
 
-                    if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
+                    if (Integer.parseInt(organism.getHealth().getText()) <= 0 || organism.getAge() > 20) {
                         worldImpl.removeOrganism(organism);
                     }
                 }

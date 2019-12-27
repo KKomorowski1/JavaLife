@@ -78,7 +78,7 @@ public class Wolf extends Organism {
 
     @Override
     public int getAge() {
-        return this.age;
+        return this.age++;
     }
 
     @Override

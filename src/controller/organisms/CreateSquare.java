@@ -1,9 +1,6 @@
 package controller.organisms;
 
-
-import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import model.Organism;
 
 

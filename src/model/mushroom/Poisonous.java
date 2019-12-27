@@ -74,7 +74,7 @@ public class Poisonous extends Organism {
 
     @Override
     public int getAge() {
-        return this.age;
+        return this.age++;
     }
 
     @Override
