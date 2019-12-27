@@ -19,6 +19,7 @@ public class Wolf extends Organism {
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
+    private int age;
 
     public Wolf(int spawnX, int spawnY) {
         this.type = "Wolf";
@@ -33,6 +34,7 @@ public class Wolf extends Organism {
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
         this.isMoving = true;
+        this.age = 0;
     }
 
     @Override
@@ -72,6 +74,11 @@ public class Wolf extends Organism {
     @Override
     public int getSpawnY() {
         return this.spawnY;
+    }
+
+    @Override
+    public int getAge() {
+        return this.age;
     }
 
     @Override

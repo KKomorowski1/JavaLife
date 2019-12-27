@@ -21,10 +21,9 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         worldImpl.addOrganisms();
         Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
-            System.out.println(worldImpl.getOrganisms().size());
             for (Organism organism : worldImpl.getOrganisms()) {
                 if (organism.isMoving()) {
-                    createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
+                    createSquare.moveSquare(organism);
 
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
                         worldImpl.addOrganism(collision.multiple(organism));

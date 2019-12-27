@@ -21,6 +21,7 @@ public class Doe extends Organism {
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
+    private int age;
 
     public Doe(int spawnX, int spawnY) {
         this.type = "Doe";
@@ -35,6 +36,8 @@ public class Doe extends Organism {
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
         this.isMoving = true;
+        this.age = 0;
+
     }
 
     @Override
@@ -75,6 +78,11 @@ public class Doe extends Organism {
     @Override
     public int getSpawnY() {
         return this.spawnY;
+    }
+
+    @Override
+    public int getAge() {
+        return this.age;
     }
 
     @Override

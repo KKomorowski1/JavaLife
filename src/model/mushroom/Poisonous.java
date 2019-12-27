@@ -19,6 +19,7 @@ public class Poisonous extends Organism {
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
+    private int age;
 
     public Poisonous(int spawnX, int spawnY) {
         this.type = "Poisonous";
@@ -33,6 +34,7 @@ public class Poisonous extends Organism {
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
         this.isMoving = false;
+        this.age = 0;
     }
 
     @Override
@@ -68,6 +70,11 @@ public class Poisonous extends Organism {
     @Override
     public int getSpawnY() {
         return this.spawnY;
+    }
+
+    @Override
+    public int getAge() {
+        return this.age;
     }
 
     @Override

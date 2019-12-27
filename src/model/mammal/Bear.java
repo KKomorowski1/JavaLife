@@ -24,6 +24,7 @@ public class Bear extends Organism{
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
+    private int age;
 
     public Bear() {
     }
@@ -41,6 +42,7 @@ public class Bear extends Organism{
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
         this.isMoving = true;
+        this.age = 0;
     }
 
     @Override
@@ -81,6 +83,11 @@ public class Bear extends Organism{
     @Override
     public int getSpawnY() {
         return this.spawnY;
+    }
+
+    @Override
+    public int getAge() {
+        return this.age;
     }
 
     @Override

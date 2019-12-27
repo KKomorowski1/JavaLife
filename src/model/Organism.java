@@ -14,6 +14,7 @@ public abstract class Organism {
     public abstract int getPower();
     public abstract int getSpawnX();
     public abstract int getSpawnY();
+    public abstract int getAge();
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
 

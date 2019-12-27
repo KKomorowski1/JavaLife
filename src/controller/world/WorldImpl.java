@@ -28,12 +28,12 @@ public class WorldImpl extends model.world.World implements World {
 
         getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Doe(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Poisonous(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Wolf(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
+//        getOrganisms().add(new Bear(random.nextInt(1000), random.nextInt(1000)));
 
         getOrganisms().sort(Comparator.comparingInt(Organism::getPower).reversed());
 
