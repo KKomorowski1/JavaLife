@@ -23,6 +23,7 @@ public class CollisionImpl implements Collision{
                         collision = 1;
                     } else {
                         collision = 2;
+                        attack(organism, static_block);
                     }
                 }
             }
@@ -30,8 +31,8 @@ public class CollisionImpl implements Collision{
         return collision;
     }
 
+    @Override
     public void attack(Organism organism, Organism organism1){
-        //if (checkShapeCollision())
             if (organism1.getPower() > organism.getPower()){
                 organism.getHealth().setText(String.valueOf(Integer.parseInt(organism.getHealth().getText()) - 20));
             }
@@ -41,10 +42,9 @@ public class CollisionImpl implements Collision{
     }
 
     @Override
-    public Organism multiple(Organism organism, List<Organism> list){
+    public Organism multiple(Organism organism){
         Random random = new Random();
         if (random.nextInt(10) >= 6){
-            if (checkShapeCollision(organism, list) == 1)
             return OrganismFactory.getOrganism(organism.getType(), random.nextInt(1000), random.nextInt(1000));
         }
         return null;

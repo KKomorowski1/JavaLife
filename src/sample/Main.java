@@ -26,7 +26,10 @@ public class Main extends Application {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism.getRectangle(), organism.getHealth(), organism.getImageView());
 
-                    worldImpl.addOrganism(collision.multiple(organism, worldImpl.getOrganisms()));
+                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
+                        worldImpl.addOrganism(collision.multiple(organism));
+                    }
+
                     if (Integer.parseInt(organism.getHealth().getText()) <= 0) {
                         worldImpl.removeOrganism(organism);
                     }

@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface Collision {
     int checkShapeCollision(Organism organism, List<Organism> list);
-    Organism multiple(Organism organism,  List<Organism> list);
+    void attack(Organism organism, Organism organism1);
+    Organism multiple(Organism organism);
 }
