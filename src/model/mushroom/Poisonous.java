@@ -19,7 +19,8 @@ public class Poisonous extends Organism {
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
-    private int age;
+    private double age;
+    private int averageLifeSpan;
 
     public Poisonous(int spawnX, int spawnY) {
         this.type = "Poisonous";
@@ -35,6 +36,7 @@ public class Poisonous extends Organism {
         this.imageView.setY(spawnY);
         this.isMoving = false;
         this.age = 0;
+        this.averageLifeSpan = 1;
     }
 
     @Override
@@ -58,7 +60,7 @@ public class Poisonous extends Organism {
     }
 
     @Override
-    public int getPower() {
+    public double getPower() {
         return this.power;
     }
 
@@ -73,8 +75,13 @@ public class Poisonous extends Organism {
     }
 
     @Override
-    public int getAge() {
-        return this.age++;
+    public int getAverageLifeSpan() {
+        return this.averageLifeSpan;
+    }
+
+    @Override
+    public double getAge() {
+        return this.age=this.age + 0.3;
     }
 
     @Override

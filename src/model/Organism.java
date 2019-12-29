@@ -11,10 +11,11 @@ public abstract class Organism {
     public abstract Text getHealth();
     public abstract Color getColor();
     public abstract Rectangle getRectangle();
-    public abstract int getPower();
+    public abstract double getPower();
     public abstract int getSpawnX();
     public abstract int getSpawnY();
-    public abstract int getAge();
+    public abstract int getAverageLifeSpan();
+    public abstract double getAge();
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
 

@@ -1,6 +1,5 @@
 package model.mammal;
 
-import controller.collision.Collision;
 import controller.organisms.CreateSquareImpl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -8,8 +7,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import model.Organism;
-
-import java.util.List;
 
 import static javafx.scene.paint.Color.BROWN;
 
@@ -19,12 +16,14 @@ public class Bear extends Organism{
     private Text health;
     private Color color;
     private Rectangle rectangle;
-    private int power;
+    private double power;
     private int spawnX;
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
-    private int age;
+    private double age;
+    private int averageLifeSpan;
+
 
     public Bear() {
     }
@@ -43,6 +42,7 @@ public class Bear extends Organism{
         this.imageView.setY(spawnY);
         this.isMoving = true;
         this.age = 0;
+        this.averageLifeSpan = 20;
     }
 
     @Override
@@ -71,8 +71,8 @@ public class Bear extends Organism{
     }
 
     @Override
-    public int getPower() {
-        return this.power;
+    public double getPower() {
+        return this.power / this.age;
     }
 
     @Override
@@ -86,8 +86,13 @@ public class Bear extends Organism{
     }
 
     @Override
-    public int getAge() {
-        return this.age++;
+    public int getAverageLifeSpan() {
+        return this.averageLifeSpan;
+    }
+
+    @Override
+    public double getAge() {
+        return this.age = this.age + 0.3;
     }
 
     @Override

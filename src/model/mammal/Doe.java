@@ -16,12 +16,13 @@ public class Doe extends Organism {
     private Text health;
     private Color color;
     private Rectangle rectangle;
-    private int power;
+    private double power;
     private int spawnX;
     private int spawnY;
     private ImageView imageView;
     private boolean isMoving;
-    private int age;
+    private double age;
+    private int averageLifeSpan;
 
     public Doe(int spawnX, int spawnY) {
         this.type = "Doe";
@@ -37,7 +38,7 @@ public class Doe extends Organism {
         this.imageView.setY(spawnY);
         this.isMoving = true;
         this.age = 0;
-
+        this.averageLifeSpan = 14;
     }
 
     @Override
@@ -66,8 +67,8 @@ public class Doe extends Organism {
     }
 
     @Override
-    public int getPower() {
-        return this.power;
+    public double getPower() {
+        return this.power / this.age;
     }
 
     @Override
@@ -81,8 +82,13 @@ public class Doe extends Organism {
     }
 
     @Override
-    public int getAge() {
-        return this.age++;
+    public int getAverageLifeSpan() {
+        return this.averageLifeSpan;
+    }
+
+    @Override
+    public double getAge() {
+        return this.age=this.age + 0.3;
     }
 
     @Override
