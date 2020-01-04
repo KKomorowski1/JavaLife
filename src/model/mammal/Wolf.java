@@ -24,7 +24,7 @@ public class Wolf extends Organism {
 
     public Wolf(int spawnX, int spawnY) {
         this.type = "Wolf";
-        this.health = new Text("200");
+        this.health = new Text("100");
         this.color = Color.RED;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
         this.rectangle.setFill(this.color);
@@ -65,7 +65,7 @@ public class Wolf extends Organism {
 
     @Override
     public double getPower() {
-        return this.power / this.age;
+        return (double) Math.round(this.power / this.age) * 5;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class Wolf extends Organism {
 
     @Override
     public double getAge() {
-        return this.age=this.age + 0.3;
+        return this.age = this.age + 0.1;
     }
 
     @Override

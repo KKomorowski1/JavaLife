@@ -11,7 +11,7 @@ public class CollisionImpl implements Collision{
     0 - No Collision detected
     1 - Collision of the same organism detected
     2 - Collision of different organism detected
-     */
+    */
 
     @Override
     public int checkShapeCollision(Organism organism, List<Organism> list) {
@@ -34,10 +34,10 @@ public class CollisionImpl implements Collision{
     @Override
     public void attack(Organism organism, Organism organism1){
             if (organism1.getPower() > organism.getPower()){
-                organism.getHealth().setText(String.valueOf(Integer.parseInt(organism.getHealth().getText()) - 20));
+                organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - organism.getPower()));
             }
             if (organism1.getType().equalsIgnoreCase("Poisonous")){
-                organism.getHealth().setText("10");
+                organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - organism.getPower()));
             }
     }
 

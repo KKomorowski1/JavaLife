@@ -24,7 +24,6 @@ public class Bear extends Organism{
     private double age;
     private int averageLifeSpan;
 
-
     public Bear() {
     }
 
@@ -72,7 +71,7 @@ public class Bear extends Organism{
 
     @Override
     public double getPower() {
-        return this.power / this.age;
+        return (double) Math.round(this.power / this.age) * 6;
     }
 
     @Override
@@ -92,7 +91,7 @@ public class Bear extends Organism{
 
     @Override
     public double getAge() {
-        return this.age = this.age + 0.3;
+        return this.age = this.age + 0.1;
     }
 
     @Override
