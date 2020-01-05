@@ -32,6 +32,7 @@ public class Main extends Application {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism);
                 }
+                System.out.println(worldImpl.getOrganisms().size());
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
                         worldImpl.addOrganism(bearController.collisionWithTheSameOrganism(organism));
                         worldImpl.addOrganism(wolfController.collisionWithTheSameOrganism(organism));

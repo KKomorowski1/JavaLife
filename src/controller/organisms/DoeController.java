@@ -18,7 +18,7 @@ public class DoeController extends Doe implements SpecificCollision {
 
     @Override
     public Organism collisionWithTheSameOrganism(Organism doe) {
-        return getOrganism(doe, "Doe");
+        return getOrganism(doe);
     }
 
     @Override

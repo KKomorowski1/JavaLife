@@ -17,7 +17,7 @@ public class WolfController extends Bear implements SpecificCollision {
 
     @Override
     public Organism collisionWithTheSameOrganism(Organism wolf) {
-        return getOrganism(wolf, "Wolf");
+        return getOrganism(wolf);
     }
 
     @Override

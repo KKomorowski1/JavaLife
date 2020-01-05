@@ -22,10 +22,10 @@ public abstract class Organism {
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
 
-    protected static Organism getOrganism(Organism organism, String type){
+    protected static Organism getOrganism(Organism organism){
         Random random = new Random();
         if (random.nextInt(100) >= 75) {
-            if (organism.getType().equalsIgnoreCase(type)) {
+            if (organism.getType().equalsIgnoreCase(organism.getType())) {
                 return OrganismFactory.getOrganism(organism.getType(), random.nextInt(500), random.nextInt(500));
             } else {
                 return null;

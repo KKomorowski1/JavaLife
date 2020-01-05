@@ -22,7 +22,7 @@ public class BearController extends Bear implements SpecificCollision {
 
     @Override
     public Organism collisionWithTheSameOrganism(Organism bear) {
-        return getOrganism(bear, "Bear");
+        return getOrganism(bear);
     }
 
     @Override
