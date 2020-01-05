@@ -1,4 +1,4 @@
-package controller.organisms;
+package controller.shape;
 
 import javafx.scene.shape.Rectangle;
 import model.Organism;

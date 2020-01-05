@@ -26,16 +26,12 @@ public class WorldImpl extends model.world.World implements World {
     public ArrayList<Organism> addOrganisms(){
         Random random = new Random();
 
-        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
+        getOrganisms().add(new Bear(420, 420));
+        getOrganisms().add(new Bear(460, 460));
+        getOrganisms().add(new Wolf(500, 500));
+        getOrganisms().add(new Wolf(540, 540));
         getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
         getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Wolf(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Wolf(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
 
         getOrganisms().sort(Comparator.comparingDouble(Organism::getPower).reversed());
 

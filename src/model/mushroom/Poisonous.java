@@ -1,6 +1,6 @@
 package model.mushroom;
 
-import controller.organisms.CreateSquareImpl;
+import controller.shape.CreateSquareImpl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;

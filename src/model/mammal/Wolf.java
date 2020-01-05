@@ -1,6 +1,6 @@
 package model.mammal;
 
-import controller.organisms.CreateSquareImpl;
+import controller.shape.CreateSquareImpl;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

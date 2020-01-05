@@ -1,6 +1,6 @@
 package model.mammal;
 
-import controller.organisms.CreateSquareImpl;
+import controller.shape.CreateSquareImpl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -16,7 +16,7 @@ public class Bear extends Organism{
     private Text health;
     private Color color;
     private Rectangle rectangle;
-    private double power;
+    private double power = 30;
     private int spawnX;
     private int spawnY;
     private ImageView imageView;
@@ -33,7 +33,6 @@ public class Bear extends Organism{
         this.color = BROWN;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
         this.rectangle.setFill(this.color);
-        this.power = 30;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
         this.imageView = new ImageView(new Image(("Resources/bear.png"), 20, 20, false, true));
@@ -71,7 +70,7 @@ public class Bear extends Organism{
 
     @Override
     public double getPower() {
-        return (double) Math.round(this.power / this.age) * 6;
+        return this.power = this.power - 0.1;
     }
 
     @Override

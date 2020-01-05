@@ -23,7 +23,7 @@ public class CollisionImpl implements Collision{
                         collision = 1;
                     } else {
                         collision = 2;
-                        attack(organism, static_block);
+                        //attack(organism, static_block);
                     }
                 }
             }
@@ -33,12 +33,14 @@ public class CollisionImpl implements Collision{
 
     @Override
     public void attack(Organism organism, Organism organism1){
-            if (organism1.getPower() > organism.getPower()){
+        if (!organism.getType().equalsIgnoreCase(organism1.getType())) {
+            if (organism1.getPower() > organism.getPower()) {
                 organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - organism.getPower()));
             }
-            if (organism1.getType().equalsIgnoreCase("Poisonous")){
+            if (organism1.getType().equalsIgnoreCase("Poisonous")) {
                 organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - organism.getPower()));
             }
+        }
     }
 
     @Override

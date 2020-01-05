@@ -6,7 +6,7 @@ import model.Organism;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import controller.organisms.CreateSquareImpl;
+import controller.shape.CreateSquareImpl;
 
 import static javafx.scene.paint.Color.BLUE;
 
