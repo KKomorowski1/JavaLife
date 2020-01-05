@@ -7,16 +7,16 @@ import model.mammal.Bear;
 public class BearController extends Bear implements SpecificCollision {
 
     @Override
-    public void collisionWithWolf(Organism wolf) {
-        if (wolf.getType().equalsIgnoreCase("Wolf")) {
-            wolf.getHealth().setText(String.valueOf(Double.parseDouble(wolf.getHealth().getText()) - Math.round(getPower())));
+    public void collisionWithWolf(Organism organism) {
+        if (organism.getType().equalsIgnoreCase("Wolf")) {
+            organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - Math.round(getPower())));
         }
     }
 
     @Override
-    public void collisionWithDoe(Organism doe) {
-        if (doe.getType().equalsIgnoreCase("Doe")){
-            doe.getHealth().setText(String.valueOf(Double.parseDouble(doe.getHealth().getText()) - Math.round(getPower()*2)));
+    public void collisionWithDoe(Organism organism) {
+        if (organism.getType().equalsIgnoreCase("Doe")){
+            organism.getHealth().setText(String.valueOf(Double.parseDouble(organism.getHealth().getText()) - Math.round(getPower()*2)));
         }
     }
 

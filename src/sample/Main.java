@@ -1,9 +1,6 @@
 package sample;
 
-import controller.organisms.BearController;
-import controller.organisms.DoeController;
-import controller.organisms.SpecificCollision;
-import controller.organisms.WolfController;
+import controller.organisms.*;
 import model.Organism;
 import controller.world.WorldImpl;
 import controller.collision.CollisionImpl;
@@ -23,6 +20,7 @@ public class Main extends Application {
     private SpecificCollision bearController = new BearController();
     private SpecificCollision doeController = new DoeController();
     private SpecificCollision wolfController = new WolfController();
+    private SpecificCollision poisonousController = new PoisonousController();
 
     @Override
     public void start(Stage primaryStage){
@@ -41,6 +39,10 @@ public class Main extends Application {
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2){
                         bearController.collisionWithWolf(organism);
                         bearController.collisionWithDoe(organism);
+                        wolfController.collisionWithDoe(organism);
+                        poisonousController.collisionWithDoe(organism);
+                        poisonousController.collisionWithWolf(organism);
+                        poisonousController.collisionWithBear(organism);
                     }
                     if (Double.parseDouble(organism.getHealth().getText()) <= 0 || organism.getAge() >= organism.getAverageLifeSpan()) {
                         worldImpl.removeOrganism(organism);

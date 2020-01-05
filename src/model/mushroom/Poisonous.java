@@ -22,6 +22,9 @@ public class Poisonous extends Organism {
     private double age;
     private int averageLifeSpan;
 
+    public Poisonous() {
+    }
+
     public Poisonous(int spawnX, int spawnY) {
         this.type = "Poisonous";
         this.health = new Text("1");
@@ -36,7 +39,7 @@ public class Poisonous extends Organism {
         this.imageView.setY(spawnY);
         this.isMoving = false;
         this.age = 0;
-        this.averageLifeSpan = 1;
+        this.averageLifeSpan = 100;
     }
 
     @Override
@@ -81,7 +84,7 @@ public class Poisonous extends Organism {
 
     @Override
     public double getAge() {
-        return this.age=this.age + 0.3;
+        return this.age = this.age + 0.3;
     }
 
     @Override

@@ -1,10 +1,11 @@
 package controller.world;
 
 import model.Organism;
-import model.mammal.Bear;
 import model.mammal.Doe;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import model.mammal.Wolf;
+import model.mushroom.Poisonous;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -24,10 +25,13 @@ public class WorldImpl extends model.world.World implements World {
     public ArrayList<Organism> addOrganisms(){
         Random random = new Random();
 
-        getOrganisms().add(new Bear(500, 500));
-        getOrganisms().add(new Doe(530,530));
-//        getOrganisms().add(new Wolf(random.nextInt(500), random.nextInt(500)));
-//        getOrganisms().add(new Wolf(random.nextInt(500), random.nextInt(500)));
+        getOrganisms().add(new Doe(random.nextInt(100), random.nextInt(100)));
+//        getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
+//        getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
+        getOrganisms().add(new Poisonous(random.nextInt(100), random.nextInt(100)));
+//        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
+//        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
+//        getOrganisms().add(new Wolf(random.nextInt(100), random.nextInt(100)));
 //        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
 //        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
 
