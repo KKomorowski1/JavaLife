@@ -24,6 +24,9 @@ public class Doe extends Organism {
     private double age;
     private int averageLifeSpan;
 
+    public Doe() {
+    }
+
     public Doe(int spawnX, int spawnY) {
         this.type = "Doe";
         this.health = new Text("60");

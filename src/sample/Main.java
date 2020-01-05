@@ -1,7 +1,9 @@
 package sample;
 
 import controller.organisms.BearController;
+import controller.organisms.DoeController;
 import controller.organisms.SpecificCollision;
+import controller.organisms.WolfController;
 import model.Organism;
 import controller.world.WorldImpl;
 import controller.collision.CollisionImpl;
@@ -19,6 +21,8 @@ public class Main extends Application {
     private WorldImpl worldImpl = new WorldImpl();
     private Scene scene = worldImpl.world(1000, 1000);
     private SpecificCollision bearController = new BearController();
+    private SpecificCollision doeController = new DoeController();
+    private SpecificCollision wolfController = new WolfController();
 
     @Override
     public void start(Stage primaryStage){
@@ -29,7 +33,9 @@ public class Main extends Application {
                     createSquare.moveSquare(organism);
                 }
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
-                        worldImpl.addOrganism(bearController.collisionWithBear(organism));
+                        worldImpl.addOrganism(bearController.collisionWithTheSameOrganism(organism));
+                        worldImpl.addOrganism(wolfController.collisionWithTheSameOrganism(organism));
+                        worldImpl.addOrganism(doeController.collisionWithTheSameOrganism(organism));
                     }
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2){
                         bearController.collisionWithWolf(organism);

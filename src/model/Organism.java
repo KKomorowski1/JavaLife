@@ -1,9 +1,12 @@
 package model;
 
+import factory.OrganismFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+
+import java.util.Random;
 
 public abstract class Organism {
 
@@ -19,4 +22,16 @@ public abstract class Organism {
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
 
+    protected static Organism getOrganism(Organism organism, String type){
+        Random random = new Random();
+        if (random.nextInt(100) >= 75) {
+            if (organism.getType().equalsIgnoreCase(type)) {
+                return OrganismFactory.getOrganism(organism.getType(), random.nextInt(500), random.nextInt(500));
+            } else {
+                return null;
+            }
+        }else {
+            return null;
+        }
+    }
 }

@@ -5,5 +5,6 @@ import model.Organism;
 public interface SpecificCollision {
     void collisionWithWolf(Organism organism);
     void collisionWithDoe(Organism organism);
-    Organism collisionWithBear(Organism organism);
+    void collisionWithBear(Organism organism);
+    Organism collisionWithTheSameOrganism(Organism organism);
 }
