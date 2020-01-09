@@ -1,6 +1,7 @@
 package sample;
 
 import controller.organisms.*;
+import factory.OrganismFactory;
 import model.Organism;
 import controller.world.WorldImpl;
 import controller.collision.CollisionImpl;
@@ -22,33 +23,41 @@ public class Main extends Application {
     private SpecificCollision wolfController = new WolfController();
     private SpecificCollision poisonousController = new PoisonousController();
 
+
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
+
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
             for (Organism organism : worldImpl.getOrganisms()) {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism);
                 }
-                System.out.println(worldImpl.getOrganisms().size());
                     if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
                         worldImpl.addOrganism(bearController.collisionWithTheSameOrganism(organism));
                         worldImpl.addOrganism(wolfController.collisionWithTheSameOrganism(organism));
                         worldImpl.addOrganism(doeController.collisionWithTheSameOrganism(organism));
-                    }
-                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2){
-                        bearController.collisionWithWolf(organism);
-                        bearController.collisionWithDoe(organism);
-                        wolfController.collisionWithDoe(organism);
-                        poisonousController.collisionWithDoe(organism);
-                        poisonousController.collisionWithWolf(organism);
-                        poisonousController.collisionWithBear(organism);
-                    }
-                    if (Double.parseDouble(organism.getHealth().getText()) <= 0 || organism.getAge() >= organism.getAverageLifeSpan()) {
-                        worldImpl.removeOrganism(organism);
-                    }
 
+                    }
+                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2) {
+                        if (collision.getType().equalsIgnoreCase("Bear")){
+                            bearController.collisionWithWolf(organism);
+                            bearController.collisionWithDoe(organism);
+                        }
+                        if (collision.getType().equalsIgnoreCase("Poisonous")){
+                            poisonousController.collisionWithDoe(organism);
+                            poisonousController.collisionWithBear(organism);
+                            poisonousController.collisionWithWolf(organism);
+                        }
+                        if (collision.getType().equalsIgnoreCase("Wolf")) {
+                            wolfController.collisionWithDoe(organism);
+                        }
                 }
+                if (Double.parseDouble(organism.getHealth().getText()) <= 0 || organism.getAge() >= organism.getAverageLifeSpan()) {
+                    worldImpl.removeOrganism(organism);
+                }
+
+            }
         }));
 
         oneSecondsWonder.setCycleCount(Timeline.INDEFINITE);

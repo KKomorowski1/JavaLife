@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 
 public class Wolf extends Organism {
 
+    public Wolf() {
+    }
+
     private String type;
     private Text health;
     private Color color;
@@ -22,8 +25,8 @@ public class Wolf extends Organism {
     private double age;
     private int averageLifeSpan;
 
-    public Wolf(int spawnX, int spawnY) {
-        this.type = "Wolf";
+    public Wolf(String type, int spawnX, int spawnY) {
+        this.type = type;
         this.health = new Text("100");
         this.color = Color.RED;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
@@ -65,7 +68,7 @@ public class Wolf extends Organism {
 
     @Override
     public double getPower() {
-        return (double) Math.round(this.power / this.age) * 5;
+        return (double) Math.round(this.power / this.age);
     }
 
     @Override
@@ -96,5 +99,10 @@ public class Wolf extends Organism {
     @Override
     public ImageView getImageView() {
         return this.imageView;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
     }
 }

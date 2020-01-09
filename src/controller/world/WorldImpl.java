@@ -1,6 +1,7 @@
 package controller.world;
 
 import model.Organism;
+import model.mammal.Bear;
 import model.mammal.Doe;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -25,15 +26,21 @@ public class WorldImpl extends model.world.World implements World {
     public ArrayList<Organism> addOrganisms(){
         Random random = new Random();
 
-        getOrganisms().add(new Doe(random.nextInt(100), random.nextInt(100)));
-//        getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
-//        getOrganisms().add(new Doe(random.nextInt(500), random.nextInt(500)));
-        getOrganisms().add(new Poisonous(random.nextInt(100), random.nextInt(100)));
-//        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
-//        getOrganisms().add(new Poisonous(random.nextInt(500), random.nextInt(500)));
-//        getOrganisms().add(new Wolf(random.nextInt(100), random.nextInt(100)));
-//        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
-//        getOrganisms().add(new Bear(random.nextInt(500), random.nextInt(500)));
+        getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear("Bear",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear("Bear",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear("Bear",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Bear("Bear",random.nextInt(1000), random.nextInt(1000)));
 
         getOrganisms().sort(Comparator.comparingDouble(Organism::getPower).reversed());
 

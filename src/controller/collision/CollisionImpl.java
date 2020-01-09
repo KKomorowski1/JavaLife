@@ -5,6 +5,9 @@ import java.util.List;
 
 public class CollisionImpl implements Collision{
 
+
+    private String type;
+
     /*
     0 - No Collision detected
     1 - Collision of the same organism detected
@@ -17,6 +20,7 @@ public class CollisionImpl implements Collision{
         for(Organism static_block : list){
             if (static_block.getRectangle() != organism.getRectangle()) {
                 if (organism.getRectangle().getBoundsInParent().intersects(static_block.getRectangle().getBoundsInParent())) {
+                    setType(static_block.getType());
                     if (organism.getType().equals(static_block.getType())){
                         collision = 1;
                     } else {
@@ -26,5 +30,13 @@ public class CollisionImpl implements Collision{
             }
         }
         return collision;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    private void setType(String type) {
+        this.type = type;
     }
 }

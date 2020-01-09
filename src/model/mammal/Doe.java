@@ -27,8 +27,8 @@ public class Doe extends Organism {
     public Doe() {
     }
 
-    public Doe(int spawnX, int spawnY) {
-        this.type = "Doe";
+    public Doe(String type, int spawnX, int spawnY) {
+        this.type = type;
         this.health = new Text("60");
         this.color = BLUE;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
@@ -102,5 +102,10 @@ public class Doe extends Organism {
     @Override
     public ImageView getImageView() {
         return this.imageView;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
     }
 }

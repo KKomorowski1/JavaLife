@@ -25,8 +25,8 @@ public class Poisonous extends Organism {
     public Poisonous() {
     }
 
-    public Poisonous(int spawnX, int spawnY) {
-        this.type = "Poisonous";
+    public Poisonous(String type,int spawnX, int spawnY) {
+        this.type = type;
         this.health = new Text("1");
         this.color = Color.PURPLE;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
@@ -100,5 +100,10 @@ public class Poisonous extends Organism {
     @Override
     public String toString() {
         return "Poisonous{}";
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
     }
 }

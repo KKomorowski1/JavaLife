@@ -1,17 +1,20 @@
 package controller.organisms;
 
 import model.Organism;
-import model.mammal.Bear;
 
-public class WolfController extends Bear implements SpecificCollision {
+import model.mammal.Wolf;
+
+public class WolfController extends Wolf implements SpecificCollision {
+
 
     @Override
     public void collisionWithWolf(Organism wolf) {}
 
     @Override
     public void collisionWithDoe(Organism doe) {
+        setType("Wolf");
         if (doe.getType().equalsIgnoreCase("Doe")){
-            doe.getHealth().setText(String.valueOf(Double.parseDouble(doe.getHealth().getText()) - Math.round(getPower())));
+            doe.getHealth().setText(String.valueOf(Double.parseDouble(doe.getHealth().getText()) - 30));
         }
     }
 
@@ -21,7 +24,5 @@ public class WolfController extends Bear implements SpecificCollision {
     }
 
     @Override
-    public void collisionWithBear(Organism bear) {
-        getHealth().setText(String.valueOf(Double.parseDouble(getHealth().getText()) - Math.round(bear.getPower())));
-    }
+    public void collisionWithBear(Organism bear) {}
 }

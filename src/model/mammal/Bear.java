@@ -16,7 +16,7 @@ public class Bear extends Organism{
     private Text health;
     private Color color;
     private Rectangle rectangle;
-    private double power = 30;
+    private double power;
     private int spawnX;
     private int spawnY;
     private ImageView imageView;
@@ -27,8 +27,8 @@ public class Bear extends Organism{
     public Bear() {
     }
 
-    public Bear(int spawnX, int spawnY) {
-        this.type = "Bear";
+    public Bear(String type, int spawnX, int spawnY) {
+        this.type = type;
         this.health = new Text("160");
         this.color = BROWN;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
@@ -42,6 +42,8 @@ public class Bear extends Organism{
         this.age = 0;
         this.averageLifeSpan = 20;
     }
+
+
 
     @Override
     public String toString() {
@@ -103,4 +105,8 @@ public class Bear extends Organism{
         return this.imageView;
     }
 
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
 }

@@ -21,6 +21,7 @@ public abstract class Organism {
     public abstract double getAge();
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
+    public abstract void setType(String type);
 
     protected static Organism getOrganism(Organism organism){
         Random random = new Random();
