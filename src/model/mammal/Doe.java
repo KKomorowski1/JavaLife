@@ -104,8 +104,5 @@ public class Doe extends Organism {
         return this.imageView;
     }
 
-    @Override
-    public void setType(String type) {
-        this.type = type;
-    }
+
 }

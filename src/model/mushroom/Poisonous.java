@@ -102,8 +102,4 @@ public class Poisonous extends Organism {
         return "Poisonous{}";
     }
 
-    @Override
-    public void setType(String type) {
-        this.type = type;
-    }
 }

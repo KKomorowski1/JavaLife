@@ -101,8 +101,4 @@ public class Wolf extends Organism {
         return this.imageView;
     }
 
-    @Override
-    public void setType(String type) {
-        this.type = type;
-    }
 }

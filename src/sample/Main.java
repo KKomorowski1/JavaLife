@@ -28,7 +28,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.01), event -> {
             for (Organism organism : worldImpl.getOrganisms()) {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism);

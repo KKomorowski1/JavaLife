@@ -12,7 +12,6 @@ public class WolfController extends Wolf implements SpecificCollision {
 
     @Override
     public void collisionWithDoe(Organism doe) {
-        setType("Wolf");
         if (doe.getType().equalsIgnoreCase("Doe")){
             doe.getHealth().setText(String.valueOf(Double.parseDouble(doe.getHealth().getText()) - 30));
         }
