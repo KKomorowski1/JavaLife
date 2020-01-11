@@ -22,6 +22,17 @@ public abstract class Organism {
     public abstract boolean isMoving();
     public abstract ImageView getImageView();
 
+    public abstract void setType(String type);
+    public abstract void setHealth(Text health);
+    public abstract void setColor(Color color);
+    public abstract void setRectangle(Rectangle rectangle);
+    public abstract void setPower(double power);
+    public abstract void setSpawnX(int spawnX);
+    public abstract void setSpawnY(int spawnY);
+    public abstract void setAverageLifeSpan(int averageLifeSpan);
+    public abstract void setAge(double age);
+    public abstract void setImageView(ImageView imageView);
+
     protected static Organism getOrganism(Organism organism){
         Random random = new Random();
         if (random.nextInt(100) >= 75) {

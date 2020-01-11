@@ -2,7 +2,6 @@ package model.mammal;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import model.Organism;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -10,7 +9,7 @@ import controller.shape.CreateSquareImpl;
 
 import static javafx.scene.paint.Color.BLUE;
 
-public class Doe extends Organism {
+public class Doe extends Mammal {
 
     private String type;
     private Text health;
@@ -45,6 +44,60 @@ public class Doe extends Organism {
     }
 
     @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setHealth(Text health) {
+        this.health = health;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    @Override
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
+    }
+
+    @Override
+    public void setPower(double power) {
+        this.power = power;
+    }
+
+    @Override
+    public void setSpawnX(int spawnX) {
+        this.spawnX = spawnX;
+    }
+
+    @Override
+    public void setSpawnY(int spawnY) {
+        this.spawnY = spawnY;
+    }
+
+    @Override
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    public void setMoving(boolean moving) {
+        isMoving = moving;
+    }
+
+    @Override
+    public void setAge(double age) {
+        this.age = age;
+    }
+
+    @Override
+    public void setAverageLifeSpan(int averageLifeSpan) {
+        this.averageLifeSpan = averageLifeSpan;
+    }
+
+    @Override
     public String toString() {
         return "Doe{}";
     }
@@ -71,7 +124,7 @@ public class Doe extends Organism {
 
     @Override
     public double getPower() {
-        return (double) Math.round(this.power / this.age) * 2;
+        return (double) Math.round(this.power / this.age) ;
     }
 
     @Override

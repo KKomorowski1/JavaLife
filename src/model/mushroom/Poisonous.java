@@ -6,9 +6,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import model.Organism;
+import model.Plant;
 
-public class Poisonous extends Organism {
+public class Poisonous extends Plant {
 
     private String type;
     private Text health;
@@ -40,6 +40,56 @@ public class Poisonous extends Organism {
         this.isMoving = false;
         this.age = 0;
         this.averageLifeSpan = 100;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setHealth(Text health) {
+        this.health = health;
+    }
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    @Override
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
+    }
+
+    @Override
+    public void setPower(double power) {
+
+    }
+
+    @Override
+    public void setSpawnX(int spawnX) {
+        this.spawnX = spawnX;
+    }
+
+    @Override
+    public void setSpawnY(int spawnY) {
+        this.spawnY = spawnY;
+    }
+
+    @Override
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    @Override
+    public void setAge(double age) {
+        this.age = age;
+    }
+
+    @Override
+    public void setAverageLifeSpan(int averageLifeSpan) {
+        this.averageLifeSpan = averageLifeSpan;
     }
 
     @Override

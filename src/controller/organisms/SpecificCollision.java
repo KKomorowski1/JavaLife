@@ -7,4 +7,5 @@ public interface SpecificCollision {
     void collisionWithDoe(Organism organism);
     void collisionWithBear(Organism organism);
     Organism collisionWithTheSameOrganism(Organism organism);
+    void collisionWithGrass(Organism organism);
 }

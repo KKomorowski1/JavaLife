@@ -29,10 +29,11 @@ public class WorldImpl extends model.world.World implements World {
         getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Doe("Doe", random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
-        getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
+        getOrganisms().add(new Poisonous("Poisonous",random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));
         getOrganisms().add(new Wolf("Wolf",random.nextInt(1000), random.nextInt(1000)));

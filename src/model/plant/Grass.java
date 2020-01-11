@@ -1,17 +1,16 @@
-package model.mammal;
+package model.plant;
 
 import controller.shape.CreateSquareImpl;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
-import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import model.Plant;
 
-public class Wolf extends Mammal {
+import static javafx.scene.paint.Color.WHITE;
 
-    public Wolf() {
-    }
+public class Grass extends Plant {
 
     private String type;
     private Text health;
@@ -25,21 +24,24 @@ public class Wolf extends Mammal {
     private double age;
     private int averageLifeSpan;
 
-    public Wolf(String type, int spawnX, int spawnY) {
+    public Grass() {
+    }
+
+    public Grass(String type, int spawnX, int spawnY) {
         this.type = type;
-        this.health = new Text("100");
-        this.color = Color.RED;
+        this.health = new Text("2");
+        this.color = WHITE;
         this.rectangle = new CreateSquareImpl().createSquare(spawnX, spawnY);
-        this.rectangle.setFill(this.color);
-        this.power = 20;
+        this.rectangle.setOpacity(0.0);
+        this.power = 0;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
-        this.imageView = new ImageView(new Image(("Resources/iconfinder_overwolf_logo_4177735.png"), 20, 20, false, true));
+        this.imageView = new ImageView(new Image(("Resources/grass.png"), 20, 20, false, true));
         this.imageView.setX(spawnX);
         this.imageView.setY(spawnY);
-        this.isMoving = true;
+        this.isMoving = false;
         this.age = 0;
-        this.averageLifeSpan = 8;
+        this.averageLifeSpan = 14;
     }
 
     @Override
@@ -98,8 +100,9 @@ public class Wolf extends Mammal {
 
     @Override
     public String toString() {
-        return "Wolf{}";
+        return "Grass{}";
     }
+
     @Override
     public String getType() {
         return this.type;
@@ -122,7 +125,7 @@ public class Wolf extends Mammal {
 
     @Override
     public double getPower() {
-        return (double) Math.round(this.power / this.age);
+        return (double) Math.round(this.power / this.age) ;
     }
 
     @Override
@@ -142,7 +145,7 @@ public class Wolf extends Mammal {
 
     @Override
     public double getAge() {
-        return this.age = this.age + 0.1;
+        return this.age=this.age + 0.1;
     }
 
     @Override

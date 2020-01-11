@@ -5,9 +5,7 @@ import java.util.List;
 
 public class CollisionImpl implements Collision{
 
-
     private String type;
-
     /*
     0 - No Collision detected
     1 - Collision of the same organism detected
@@ -16,6 +14,7 @@ public class CollisionImpl implements Collision{
 
     @Override
     public int checkShapeCollision(Organism organism, List<Organism> list) {
+
         int collision = 0;
         for(Organism static_block : list){
             if (static_block.getRectangle() != organism.getRectangle()) {

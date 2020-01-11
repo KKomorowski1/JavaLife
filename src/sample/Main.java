@@ -1,7 +1,6 @@
 package sample;
 
 import controller.organisms.*;
-import factory.OrganismFactory;
 import model.Organism;
 import controller.world.WorldImpl;
 import controller.collision.CollisionImpl;
@@ -23,26 +22,23 @@ public class Main extends Application {
     private SpecificCollision wolfController = new WolfController();
     private SpecificCollision poisonousController = new PoisonousController();
 
-
     @Override
     public void start(Stage primaryStage) {
 
         worldImpl.addOrganisms();
-        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.01), event -> {
+        Timeline oneSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
             for (Organism organism : worldImpl.getOrganisms()) {
                 if (organism.isMoving()) {
                     createSquare.moveSquare(organism);
                 }
-                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 1) {
-                        worldImpl.addOrganism(bearController.collisionWithTheSameOrganism(organism));
-                        worldImpl.addOrganism(wolfController.collisionWithTheSameOrganism(organism));
-                        worldImpl.addOrganism(doeController.collisionWithTheSameOrganism(organism));
 
-                    }
-                    if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2) {
+                System.out.println(worldImpl.getOrganisms().size());
+                if (collision.checkShapeCollision(organism, worldImpl.getOrganisms()) == 2) {
                         if (collision.getType().equalsIgnoreCase("Bear")){
                             bearController.collisionWithWolf(organism);
                             bearController.collisionWithDoe(organism);
+                            bearController.collisionWithGrass(organism);
+                            worldImpl.addOrganism(bearController.collisionWithTheSameOrganism(organism));
                         }
                         if (collision.getType().equalsIgnoreCase("Poisonous")){
                             poisonousController.collisionWithDoe(organism);
@@ -51,6 +47,12 @@ public class Main extends Application {
                         }
                         if (collision.getType().equalsIgnoreCase("Wolf")) {
                             wolfController.collisionWithDoe(organism);
+                            wolfController.collisionWithGrass(organism);
+                            worldImpl.addOrganism(wolfController.collisionWithTheSameOrganism(organism));
+                        }
+                        if (collision.getType().equalsIgnoreCase("Doe")){
+                            worldImpl.addOrganism(doeController.collisionWithTheSameOrganism(organism));
+                            doeController.collisionWithGrass(organism);
                         }
                 }
                 if (Double.parseDouble(organism.getHealth().getText()) <= 0 || organism.getAge() >= organism.getAverageLifeSpan()) {
